@@ -37,3 +37,19 @@ button:active {
     
 }
 
+ul {
+    list-style: none;
+    padding-left: 0%;
+    margin-top: 20px;
+}
+
+li {
+    font-size: medium;
+    font-weight: bolder;
+    margin-top: 4px;
+}
+
+a {
+    color:#60b131
+}
+
