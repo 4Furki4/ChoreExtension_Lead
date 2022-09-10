@@ -23,10 +23,10 @@ button {
     margin-top: 5px;
     padding: 20px 40px;
     border-radius: 2px;
-    border: none;
     font-weight: bolder;
     color: white;
     font-size:medium;
+    border: 3px solid #60b131;
 }
 
 button:hover {
@@ -54,3 +54,12 @@ a {
     color:#60b131
 }
 
+#delete-btn {
+    background-color: white;
+    color: #60b131;
+
+}
+
+#delete-btn:hover {
+    background-color: rgba(128, 128, 128, 0.192)
+}

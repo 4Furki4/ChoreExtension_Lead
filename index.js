@@ -1,12 +1,29 @@
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+let myLeads = []
 const inputBtn = document.getElementById("input-btn")
+const deleteBtn = document.getElementById("delete-btn")
 const inputEl = document.getElementById("input-el")
 const ulEL = document.getElementById("ul-el")
+
+const leadsFromLocal = JSON.parse(localStorage.getItem("myLeads"))
+
+if(leadsFromLocal) {
+    myLeads = leadsFromLocal
+    renderLeads()
+}
+
+deleteBtn.addEventListener("dblclick", (event) => {
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
+})
+
+
 
 inputBtn.addEventListener("click", function(){
     const inputValue= inputEl.value
     inputEl.value = ""
     myLeads.push(inputValue);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLeads()
 })
 
