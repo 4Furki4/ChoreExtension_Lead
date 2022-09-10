@@ -28,14 +28,13 @@ function render(leads) {
     ulEL.innerHTML = listItems;
 }
 
-const tabs = [
-    {url:"https://www.linkedin.com/in/per-harald-borgen/"}
-]
-
 tabBtn.addEventListener("click", (event) => {
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    render(myLeads)
+
+    chrome.tabs.query({active:true, currentWindow:true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+    })
 })
 
 deleteBtn.addEventListener("dblclick", (event) => {
