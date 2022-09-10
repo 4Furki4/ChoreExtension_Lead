@@ -1,6 +1,7 @@
 let myLeads = []
 const inputBtn = document.getElementById("input-btn")
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
 const inputEl = document.getElementById("input-el")
 const ulEL = document.getElementById("ul-el")
 
@@ -26,6 +27,16 @@ function render(leads) {
     }
     ulEL.innerHTML = listItems;
 }
+
+const tabs = [
+    {url:"https://www.linkedin.com/in/per-harald-borgen/"}
+]
+
+tabBtn.addEventListener("click", (event) => {
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    render(myLeads)
+})
 
 deleteBtn.addEventListener("dblclick", (event) => {
     localStorage.clear()
